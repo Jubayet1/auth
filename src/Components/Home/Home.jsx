@@ -37,6 +37,7 @@ const Home = () => {
         <button style={stylr} onClick={() => googleSignIn()}>Sign up by Google</button>
         <button style={stylr}>Sign up by Facebook</button>
         <button style={stylr}>Sign up by Microsoft</button>
+        <h1 class="text-3xl font-bold underline">Hello world!</h1>
     </div>
   )
 }
