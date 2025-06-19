@@ -8,6 +8,8 @@ import Layout from './Components/LayOut/Layout.jsx'
 import SignUp from './Components/SignUp/SignUp.jsx'
 import Login from './Components/LogIn/Login.jsx'
 import AuthProvider from './AuthProvider/AuthProvider.jsx'
+import Profile from './Components/Profile/Profile.jsx'
+import PrivateRoutes from './Components/PrivateRoutes/PrivateRoutes.jsx'
 
 const route = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ const route = createBrowserRouter([
       {
         path: "login",
         element: <Login />
+      },
+      {
+        path: "profile",
+        element: <PrivateRoutes><Profile /></PrivateRoutes>
       }
     ] 
   }
@@ -33,9 +39,9 @@ const route = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-    <RouterProvider router={route}>
+      <RouterProvider router={route}>
         <App />
-    </RouterProvider>
-      </AuthProvider>
+      </RouterProvider>
+    </AuthProvider>
   </StrictMode>,
 )

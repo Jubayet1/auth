@@ -2,7 +2,9 @@ import React, { createContext, useState } from 'react';
 import auth from '../firebase.init';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
+
 export const AuthContext = createContext(null);
+
 
 const createUserWithEmail = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
@@ -29,7 +31,6 @@ const logInUserWithEmail = (email, password) => {
   });
 }
 const logOut = () => {
-    console.log("signout")
     signOut(auth)
     .then(() => {
 }).catch((error) => {

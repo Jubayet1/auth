@@ -1,15 +1,17 @@
 import React, { useContext, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 
 const Login = () => {
+  const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const {logInUserWithEmail} = useContext(AuthContext);
     const handleSubmit = (e) => {
       e.preventDefault();
-      logInUserWithEmail(email, password)
-    }
+      logInUserWithEmail(email, password);
+      navigate("/profile")
+      }
   return (
     <form onSubmit={handleSubmit}>
       <div className="hero bg-base-200 min-h-screen">
